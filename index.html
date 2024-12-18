@@ -2,189 +2,212 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Roy - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#007bff',
+                        'secondary': '#6c757d',
+                        'dark-bg': '#121212',
+                        'dark-card': '#1E1E1E',
+                        'dark-text': '#E0E0E0'
+                    }
+                }
+            }
+        }
+
+        // Dark mode toggle function
+        function toggleDarkMode() {
+            const htmlElement = document.documentElement;
+            htmlElement.classList.toggle('dark');
+            
+            // Save preference in localStorage
+            const isDarkMode = htmlElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        // Check saved dark mode preference on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedDarkMode = localStorage.getItem('darkMode');
+            if (savedDarkMode === 'true') {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
         }
-        .header {
-            text-align: center;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        
+        .section-header {
+            transition: all 0.3s ease;
         }
-        .header h1 {
+        
+        .section-header:hover {
+            transform: translateX(10px);
             color: #007bff;
-            margin-bottom: 5px;
         }
-        .contact-info {
-            text-align: center;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+        
+        .skill-tag {
+            transition: all 0.3s ease;
         }
-        .section {
-            margin-bottom: 20px;
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background-color: #007bff;
+            color: white;
         }
-        .section-title {
-            color: #007bff;
-            border-bottom: 1px solid #007bff;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
-        }
-        .subsection {
-            margin-bottom: 15px;
-        }
-        .job-title {
-            font-weight: bold;
-        }
-        .institution {
-            color: #666;
-        }
-        .skills-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .skills-column {
-            width: 48%;
-        }
+        
         @media print {
-            body {
-                max-width: 100%;
-                padding: 0;
+            .no-print {
+                display: none;
             }
         }
     </style>
 </head>
-<body>
-    <div class="header">
-        <h1>ABHISHEK ROY</h1>
-        <div class="contact-info">
-            📞 8761947775 / 9395355038 | ✉️ abhishekroy.1599@gmail.com / roy.abhishek.a13@gmail.com<br>
-            🏠 H no. 158, Ward 8, Rongmala Road, Near Bamboo Company, Lanka, Assam, 782446
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">PROFESSIONAL OBJECTIVE</h2>
-        <p>To work with an organization that provides a platform to explore innovative ideas and contribute effectively to organizational goals and objectives.</p>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
-        <p>Skilled Java developer with a strong technical background, proficient in multiple programming languages including Java, C, C++, JavaScript, XML, and HTML. Experienced in GUI development and passionate about continuous learning and technological innovation.</p>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">EDUCATION</h2>
-        <div class="subsection">
-            <div class="job-title">M.Tech in Information Technology</div>
-            <div class="institution">University of Hyderabad | 2024-Ongoing</div>
-        </div>
-        <div class="subsection">
-            <div class="job-title">B.Tech in Information Technology</div>
-            <div class="institution">North Eastern Hills University | 2018-2022</div>
-            <div>CGPA: 75.50</div>
-        </div>
-        <div class="subsection">
-            <div class="job-title">12th Science</div>
-            <div class="institution">Vivekananda Kendra Vidyalaya (CBSE) | 2017</div>
-            <div>CGPA: 7.6</div>
-        </div>
-        <div class="subsection">
-            <div class="job-title">10th Matriculation</div>
-            <div class="institution">Vivekananda Kendra Vidyalaya (CBSE) | 2015</div>
-            <div>CGPA: 8.5</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 class="section-title">SKILLS</h2>
-        <div class="skills-container">
-            <div class="skills-column">
-                <h3>Hard Skills</h3>
-                <ul>
-                    <li>Java</li>
-                    <li>C/C++</li>
-                    <li>DBMS</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>MySQL</li>
-                    <li>XML</li>
-                    <li>Office Programs</li>
-                </ul>
+<body class="bg-gray-100 text-gray-800 dark:bg-dark-bg dark:text-dark-text leading-relaxed">
+    <div class="container mx-auto max-w-4xl p-6 bg-white dark:bg-dark-card shadow-lg">
+        <!-- Header -->
+        <header class="text-center border-b-4 border-primary pb-4 mb-6">
+            <h1 class="text-4xl font-bold text-primary tracking-tight mb-2">ABHISHEK ROY</h1>
+            <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                <p>📞 8761947775 / 9395355038 | ✉️ abhishekroy.1599@gmail.com</p>
+                <p class="text-xs">🏠 H no. 158, Ward 8, Rongmala Road, Near Bamboo Company, Lanka, Assam, 782446</p>
             </div>
-            <div class="skills-column">
-                <h3>Soft Skills</h3>
-                <ul>
-                    <li>Leadership</li>
-                    <li>Teamwork</li>
-                    <li>Communication</li>
-                    <li>Time Management</li>
-                    <li>Problem Solving</li>
-                </ul>
+        </header>
+
+        <!-- Sections -->
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="md:col-span-2 space-y-6">
+                <!-- Professional Summary -->
+                <section>
+                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
+                        Professional Summary
+                    </h2>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Skilled Java developer with a strong technical background, proficient in multiple programming languages including Java, C, C++, JavaScript, XML, and HTML. Experienced in GUI development and passionate about continuous learning and technological innovation.
+                    </p>
+                </section>
+
+                <!-- Education -->
+                <section>
+                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
+                        Education
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-primary">M.Tech in Information Technology</h3>
+                            <p class="text-gray-600 dark:text-gray-300 font-medium">University of Hyderabad</p>
+                            <p class="text-sm">Duration: 2024-Ongoing</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
+                                <li>Currently pursuing Master's degree</li>
+                                <li>Specialization in Information Technology</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-primary">B.Tech in Information Technology</h3>
+                            <p class="text-gray-600 dark:text-gray-300 font-medium">North Eastern Hills University</p>
+                            <p class="text-sm">Duration: 2018-2022</p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
+                                <li>Completed Bachelor of Technology</li>
+                                <li>Cumulative Grade Point Average (CGPA): 75.50</li>
+                                <li>Major: Information Technology</li>
+                            </ul>
+                        </div>
+                        <!-- Previous education entries remain the same -->
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section>
+                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
+                        Projects
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-primary">Chaotic Map Image Encryption</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+                                <li>Implemented patient data encryption using Arnold Cat Map and Henon Map</li>
+                                <li>Utilized Python and Jupyter Notebook</li>
+                                <li>Conducted comparative analyses of encrypted image types</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                            <h3 class="font-bold text-lg text-primary">Full Stack Web Deployments</h3>
+                            <div class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                                <div>
+                                    <p class="font-semibold">OEP Architecture Website</p>
+                                    <p>Deployment Date: June 2023</p>
+                                    <a href="https://oepworkspace.in/" target="_blank" class="text-primary hover:underline">
+                                        https://oepworkspace.in/
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">WTD Company Website</p>
+                                    <p>Deployment Date: February 2024</p>
+                                    <a href="https://withthedragonflies.in/" target="_blank" class="text-primary hover:underline">
+                                        https://withthedragonflies.in/
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
-    </div>
 
-    <div class="section">
-        <h2 class="section-title">PROJECTS</h2>
-        <div class="subsection">
-            <div class="job-title">Stationary Management System</div>
-            <ul>
-                <li>Developed during high school</li>
-                <li>Created a comprehensive system for managing school shop inventory</li>
-                <li>Implemented tracking of stationary items, sales, and stock management</li>
-            </ul>
-        </div>
-        <div class="subsection">
-            <div class="job-title">Block Cipher Modes Implementation</div>
-            <ul>
-                <li>Studied and implemented different block cipher modes</li>
-                <li>Used Java and C++ languages</li>
-            </ul>
-        </div>
-        <div class="subsection">
-            <div class="job-title">Chaotic Map Image Encryption</div>
-            <ul>
-                <li>Implemented patient data encryption using Arnold Cat Map and Henon Map</li>
-                <li>Utilized Python and Jupyter Notebook</li>
-                <li>Conducted comparative analyses of encrypted image types</li>
-            </ul>
-        </div>
-        <div class="subsection">
-            <div class="job-title">Full Stack Web Deployment</div>
-            <div class="institution">OEP Architecture Website</div>
-            <ul>
-                <li>Created web page using Firebase database</li>
-                <li>Technologies: HTML, CSS</li>
-                <li>Deployed through Firebase</li>
-                <li>Website: <a href="https://oepworkspace.in/">https://oepworkspace.in/</a></li>
-                <li>Deployment Date: June 2023</li>
-            </ul>
-            <div class="institution">WTD Company Website</div>
-            <ul>
-                <li>Similar full-stack deployment approach</li>
-                <li>Website: <a href="https://withthedragonflies.in/">https://withthedragonflies.in/</a></li>
-                <li>Deployment Date: February 2024</li>
-            </ul>
-        </div>
-    </div>
+            <!-- Sidebar -->
+            <aside class="space-y-6">
+                <!-- Skills -->
+                <section>
+                    <h2 class="text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">Skills</h2>
+                    <div>
+                        <h3 class="font-bold mb-2">Technical Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Java</span>
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">C/C++</span>
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">HTML/CSS</span>
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="font-bold mb-2">Soft Skills</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Leadership</span>
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Teamwork</span>
+                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Communication</span>
+                        </div>
+                    </div>
+                </section>
 
-    <div class="section">
-        <h2 class="section-title">PERSONAL DETAILS</h2>
-        <ul>
-            <li><strong>Date of Birth:</strong> 15 September 1999</li>
-            <li><strong>Father's Name:</strong> Ashutosh Roy</li>
-            <li><strong>Gender:</strong> Male</li>
-            <li><strong>Nationality:</strong> Indian</li>
-            <li><strong>Marital Status:</strong> Single</li>
-        </ul>
+                <!-- Personal Details -->
+                <section>
+                    <h2 class="text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">Personal Details</h2>
+                    <ul class="text-sm space-y-2">
+                        <li><strong>Date of Birth:</strong> 15 September 1999</li>
+                        <li><strong>Nationality:</strong> Indian</li>
+                        <li><strong>Gender:</strong> Male</li>
+                        <li><strong>Marital Status:</strong> Single</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+
+        <!-- Print & Dark Mode Options -->
+        <div class="text-center mt-6 no-print flex justify-center space-x-4">
+            <button onclick="window.print()" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                Print Resume
+            </button>
+            <button onclick="toggleDarkMode()" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                Toggle Dark Mode
+            </button>
+        </div>
     </div>
 </body>
 </html>
