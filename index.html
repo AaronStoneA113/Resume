@@ -4,244 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Roy - Resume</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
     <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#007bff',
-                        'secondary': '#6c757d',
-                        'dark-bg': '#121212',
-                        'dark-card': '#1E1E1E',
-                        'dark-text': '#E0E0E0'
-                    }
-                }
-            }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Dark mode toggle function
-        function toggleDarkMode() {
-            const htmlElement = document.documentElement;
-            htmlElement.classList.toggle('dark');
-            
-            // Save preference in localStorage
-            const isDarkMode = htmlElement.classList.contains('dark');
-            localStorage.setItem('darkMode', isDarkMode);
-        }
-
-        // Check saved dark mode preference on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedDarkMode = localStorage.getItem('darkMode');
-            if (savedDarkMode === 'true') {
-                document.documentElement.classList.add('dark');
-            }
-        });
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .section-header {
-            transition: all 0.3s ease;
-        }
-        
-        .section-header:hover {
-            transform: translateX(10px);
-            color: #007bff;
-        }
-        
-        .skill-tag {
-            transition: all 0.3s ease;
-        }
-        
-        .skill-tag:hover {
-            transform: scale(1.05);
-            background-color: #007bff;
-            color: white;
-        }
-        
-        @media print {
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-dark-bg dark:text-dark-text leading-relaxed">
-    <div class="container mx-auto max-w-4xl p-6 bg-white dark:bg-dark-card shadow-lg">
-        <!-- Header -->
-        <header class="text-center border-b-4 border-primary pb-4 mb-6">
-            <h1 class="text-4xl font-bold text-primary tracking-tight mb-2">ABHISHEK ROY</h1>
-            <div class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                <p>📞 8761947775 / 9395355038</p>
-                <p>
-                    <a href="mailto:abhishekroy.1599@gmail.com" class="hover:text-primary dark:hover:text-primary-dark">
-                        ✉️ abhishekroy.1599@gmail.com
-                    </a>
-                    /
-                    <a href="mailto:roy.abhishek.a13@gmail.com" class="hover:text-primary dark:hover:text-primary-dark">
-                        roy.abhishek.a13@gmail.com
-                    </a>
-                </p>
-                <p class="text-xs">🏠 H no. 158, Ward 8, Rongmala Road, Near Bamboo Company, Lanka, Assam, 782446</p>
-            </div>
+<body>
+    <div class="container">
+        <nav>
+            <a href="#professional-summary">Summary</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#personal-details">Details</a>
+        </nav>
+
+        <header>
+            <h1>ABHISHEK ROY</h1>
+            <ul class="contact-info">
+                <li style="--i:1">📞 8761947775 / 9395355038</li>
+                <li style="--i:2">✉️ <a href="mailto:abhishekroy.1599@gmail.com">abhishekroy.1599@gmail.com</a></li>
+                <li style="--i:3">🏠 H no. 158, Ward 8, Rongmala Road, Near Bamboo Company, Lanka, Assam, 782446</li>
+            </ul>
         </header>
 
-        <!-- Sections -->
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="md:col-span-2 space-y-6">
-                <!-- Professional Summary -->
-                <section>
-                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
-                        Professional Summary
-                    </h2>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Skilled Java developer with a strong technical background, proficient in multiple programming languages including Java, C, C++, JavaScript, XML, and HTML. Experienced in GUI development and passionate about continuous learning and technological innovation.
-                    </p>
-                </section>
+        <section id="professional-summary" class="professional-summary">
+            <h2>Professional Summary</h2>
+            <p>Skilled Java developer with a strong technical background, proficient in multiple programming languages including Java, C, C++, JavaScript, XML, and HTML. Experienced in GUI development and passionate about continuous learning and technological innovation.</p>
+        </section>
 
-                <!-- Education -->
-                <section>
-                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
-                        Education
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">M.Tech in Information Technology</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">University of Hyderabad</p>
-                            <p class="text-sm">Duration: 2024-Ongoing</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                <li>Currently pursuing Master's degree</li>
-                                <li>Specialization in Information Technology</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">B.Tech in Information Technology</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">North Eastern Hills University</p>
-                            <p class="text-sm">Duration: 2018-2022</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                <li>Completed Bachelor of Technology</li>
-                                <li>Cumulative Grade Point Average (CGPA): 8.05</li>
-                                <li>Major: Information Technology</li>
-                            </ul>
-                        </div>
-						 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">12th from CBSE</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">Vivekananda Kendra Vidyalaya</p>
-                            <p class="text-sm">Duration: 2017</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                <li>Completed Class 12</li>
-                                <li>Cumulative Grade Point Average (CGPA): 7.6</li>
-                            </ul>
-                        </div>
-						 <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">10th from CBSE</h3>
-                            <p class="text-gray-600 dark:text-gray-300 font-medium">Vivekananda Kendra Vidyalaya</p>
-                            <p class="text-sm">Duration: 2015</p>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-2">
-                                <li>Completed Matric</li>
-                                <li>Cumulative Grade Point Average (CGPA): 8.5</li>
-                            </ul>
-                        </div>
-                        <!-- Previous education entries remain the same -->
-                    </div>
-                </section>
+        <section id="education" class="education">
+            <h2>Education</h2>
+            <ul>
+                <li>M.Tech in Information Technology, University of Hyderabad (2024-Ongoing)</li>
+                <li>B.Tech in Information Technology, North Eastern Hills University (2018-2022)</li>
+                <li>12th from CBSE, Vivekananda Kendra Vidyalaya (2017)</li>
+                <li>10th from CBSE, Vivekananda Kendra Vidyalaya (2015)</li>
+            </ul>
+        </section>
 
-                <!-- Projects -->
-                <section>
-                    <h2 class="section-header text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">
-                        Projects
-                    </h2>
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">Stationary Management System</h3>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
-                                <li>Developed during high school</li>
-                                <li>Created a comprehensive system for managing school shop inventory</li>
-                                <li>Implemented tracking of stationary items, sales, and stock management</li>
-                            </ul>
-                        </div>
-						<div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">Chaotic Map Image Encryption (Major Project)</h3>
-                            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
-                                <li>Implemented patient data encryption using Arnold Cat Map and Henon Map</li>
-                                <li>Utilized Python and Jupyter Notebook</li>
-                                <li>Conducted comparative analyses of encrypted image types</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
-                            <h3 class="font-bold text-lg text-primary">Full Stack Web Deployments</h3>
-                            <div class="text-sm text-gray-700 dark:text-gray-300 space-y-2">
-                                <div>
-                                    <p class="font-semibold">OEP Architecture Website</p>
-                                    <p>Deployment Date: June 2023</p>
-                                    <a href="https://oepworkspace.in/" target="_blank" class="text-primary hover:underline">
-                                        https://oepworkspace.in/
-                                    </a>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">WTD Company Website</p>
-                                    <p>Deployment Date: February 2024</p>
-                                    <a href="https://withthedragonflies.in/" target="_blank" class="text-primary hover:underline">
-                                        https://withthedragonflies.in/
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Stationary Management System: Developed a comprehensive system for managing school shop inventory.</li>
+                <li>Chaotic Map Image Encryption: Implemented patient data encryption using Arnold Cat Map and Henon Map.</li>
+                <li>Full Stack Web Deployments: OEP Architecture Website, WTD Company Website.</li>
+            </ul>
+        </section>
 
-            <!-- Sidebar -->
-            <aside class="space-y-6">
-                <!-- Skills -->
-                <section>
-                    <h2 class="text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">Skills</h2>
-                    <div>
-                        <h3 class="font-bold mb-2">Technical Skills</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Java</span>
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">C/C++</span>
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">HTML/CSS</span>
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">MySQL</span>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <h3 class="font-bold mb-2">Soft Skills</h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Leadership</span>
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Teamwork</span>
-                            <span class="skill-tag bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded-full text-xs">Communication</span>
-                        </div>
-                    </div>
-                </section>
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Java, C/C++, HTML/CSS, MySQL</li>
+                <li>Leadership, Teamwork, Communication</li>
+            </ul>
+        </section>
 
-                <!-- Personal Details -->
-                <section>
-                    <h2 class="text-2xl font-semibold text-primary border-b-2 border-primary pb-2 mb-4">Personal Details</h2>
-                    <ul class="text-sm space-y-2">
-                        <li><strong>Date of Birth:</strong> 15 September 1999</li>
-                        <li><strong>Nationality:</strong> Indian</li>
-                        <li><strong>Gender:</strong> Male</li>
-                        <li><strong>Marital Status:</strong> Single</li>
-                    </ul>
-                </section>
-            </aside>
-        </div>
+        <section id="personal-details" class="personal-details">
+            <h2>Personal Details</h2>
+            <ul class="personal-details-list">
+                <li>Date of Birth: 15 September 1999</li>
+                <li>Nationality: Indian</li>
+                <li>Gender: Male</li>
+                <li>Marital Status: Single</li>
+            </ul>
+        </section>
 
-        <!-- Print & Dark Mode Options -->
-        <div class="text-center mt-6 no-print flex justify-center space-x-4">
-            <button onclick="window.print()" class="bg-primary text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                Print Resume
-            </button>
-            <button onclick="toggleDarkMode()" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-                Toggle Dark Mode
-            </button>
+        <div style="text-align: center; margin-top: 20px;">
+            <button onclick="scrollToTop()">Contact Me</button>
         </div>
     </div>
 </body>
