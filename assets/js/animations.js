@@ -99,7 +99,7 @@ if (!isMobile) {
 }
 
 if (!isMobile) {
-  const sidebarInner = document.querySelector('.sidebar-inner');
+  const sidebarInner = document.querySelector('.sidebar-scroll');
   window.addEventListener('scroll', () => {
     sidebarInner.style.transform = `translateY(${window.scrollY * 0.08}px)`;
   }, { passive: true });
