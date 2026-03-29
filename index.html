@@ -294,16 +294,33 @@
     });
 
     document.getElementById('download-btn').addEventListener('click', () => {
-      const actions = document.querySelector('.sidebar-actions');
-      const sidebar = document.querySelector('.sidebar');
-      const main = document.querySelector('.main-content');
-
-      actions.style.visibility = 'hidden';
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 
-      sidebar.style.position = 'absolute';
-      sidebar.style.height = '100%';
-      document.body.style.position = 'relative';
+      const clone = document.body.cloneNode(true);
+
+      clone.style.cssText = 'display:flex; margin:0; padding:0; min-height:auto;';
+
+      const cloneSidebar = clone.querySelector('.sidebar');
+      cloneSidebar.style.cssText = `
+        position: relative;
+        width: 280px;
+        min-width: 280px;
+        min-height: 100%;
+        flex-shrink: 0;
+      `;
+
+      const cloneMain = clone.querySelector('.main-content');
+      cloneMain.style.cssText = 'margin-left:0; flex:1; padding:4rem 3rem 4rem 3.5rem;';
+
+      const cloneActions = clone.querySelector('.sidebar-actions');
+      if (cloneActions) cloneActions.style.display = 'none';
+
+      clone.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+      const wrapper = document.createElement('div');
+      wrapper.style.cssText = 'position:absolute; left:-9999px; top:0; width:1200px;';
+      wrapper.appendChild(clone);
+      document.body.appendChild(wrapper);
 
       html2pdf().set({
         margin: 0,
@@ -311,11 +328,8 @@
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 1200 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      }).from(document.body).save().then(() => {
-        sidebar.style.position = '';
-        sidebar.style.height = '';
-        document.body.style.position = '';
-        actions.style.visibility = '';
+      }).from(clone).save().then(() => {
+        document.body.removeChild(wrapper);
       });
     });
   </script>
