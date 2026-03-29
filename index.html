@@ -296,6 +296,10 @@
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
       window.print();
     });
+
+    window.addEventListener('beforeprint', () => {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    });
   </script>
 
 </body>

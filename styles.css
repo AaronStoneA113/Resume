@@ -70,10 +70,15 @@ body.light {
     print-color-adjust: exact !important;
   }
 
+  html, body {
+    height: auto !important;
+    min-height: 100% !important;
+  }
+
   body {
     display: flex !important;
     flex-direction: row !important;
-    min-height: 100vh;
+    align-items: stretch !important;
     background: var(--bg) !important;
   }
 
@@ -81,10 +86,18 @@ body.light {
     position: relative !important;
     width: var(--sidebar-w) !important;
     min-width: var(--sidebar-w) !important;
-    min-height: 100vh !important;
     height: auto !important;
+    min-height: 100% !important;
     flex-shrink: 0 !important;
+    align-self: stretch !important;
     border-right: 1px solid var(--border) !important;
+    break-inside: avoid !important;
+  }
+
+  .sidebar-inner {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow: visible !important;
   }
 
   .sidebar-actions {
@@ -94,14 +107,41 @@ body.light {
   .main-content {
     margin-left: 0 !important;
     flex: 1 !important;
+    min-width: 0 !important;
   }
 
   .section {
     opacity: 1 !important;
     transform: none !important;
+    visibility: visible !important;
   }
 
-  section, .timeline-item, .project-card, .detail-item {
+  .section-title,
+  .section-label,
+  .timeline-degree,
+  .project-name,
+  .lang-name,
+  .detail-value {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--text-primary) !important;
+  }
+
+  .details-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .lang-item {
+    grid-template-columns: 90px 130px 1fr !important;
+  }
+
+  .lang-level-label {
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  section {
     break-inside: avoid;
   }
 }
