@@ -60,22 +60,47 @@ body.light {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
-    display: block;
-    position: relative;
+    display: flex !important;
+    flex-direction: row !important;
+    min-height: 100vh;
+    background: var(--bg) !important;
   }
+
   .sidebar {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
+    position: relative !important;
+    width: var(--sidebar-w) !important;
+    min-width: var(--sidebar-w) !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    flex-shrink: 0 !important;
+    border-right: 1px solid var(--border) !important;
   }
-  .main-content {
-    margin-left: var(--sidebar-w);
-  }
+
   .sidebar-actions {
-    display: none;
+    display: none !important;
   }
+
+  .main-content {
+    margin-left: 0 !important;
+    flex: 1 !important;
+  }
+
+  .section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   section, .timeline-item, .project-card, .detail-item {
     break-inside: avoid;
   }
