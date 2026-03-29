@@ -66,7 +66,7 @@
 
     <section id="summary" class="section reveal">
       <div class="section-label">01 — Summary</div>
-      <h2 class="section-title">Professional Summary</h2>
+      <h2 class="section-title scramble">Professional Summary</h2>
       <p class="summary-text">
         Skilled Java developer with a strong technical background, proficient in multiple programming languages including Java, C, C++, JavaScript, and HTML. Experienced in GUI development, full-stack web deployments, and image encryption research. Passionate about continuous learning and building practical software solutions.
       </p>
@@ -74,7 +74,7 @@
 
     <section id="education" class="section reveal">
       <div class="section-label">02 — Education</div>
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title scramble">Education</h2>
       <div class="timeline">
 
         <div class="timeline-item">
@@ -90,7 +90,7 @@
           <div class="timeline-body">
             <div class="timeline-degree">B.Tech in Information Technology</div>
             <div class="timeline-inst">North Eastern Hills University</div>
-            <div class="timeline-score">First Division — CGPA: 8.05 / 10</div>
+            <div class="timeline-score" data-count="8.05" data-suffix=" / 10" data-prefix="First Division — CGPA: ">First Division — CGPA: 8.05 / 10</div>
           </div>
         </div>
 
@@ -99,7 +99,7 @@
           <div class="timeline-body">
             <div class="timeline-degree">Class XII — CBSE</div>
             <div class="timeline-inst">Vivekananda Kendra Vidyalaya</div>
-            <div class="timeline-score">75.4%</div>
+            <div class="timeline-score" data-count="75.4" data-suffix="%">75.4%</div>
           </div>
         </div>
 
@@ -108,7 +108,7 @@
           <div class="timeline-body">
             <div class="timeline-degree">Class X — CBSE</div>
             <div class="timeline-inst">Vivekananda Kendra Vidyalaya</div>
-            <div class="timeline-score">72%</div>
+            <div class="timeline-score" data-count="72" data-suffix="%">72%</div>
           </div>
         </div>
 
@@ -117,7 +117,7 @@
 
     <section id="projects" class="section reveal">
       <div class="section-label">03 — Projects</div>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title scramble">Projects</h2>
       <div class="project-grid">
 
         <div class="project-card">
@@ -165,7 +165,7 @@
 
     <section id="skills" class="section reveal">
       <div class="section-label">04 — Skills</div>
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title scramble">Skills</h2>
       <div class="skills-wrap">
         <div class="skills-group">
           <div class="skills-group-label">Technical</div>
@@ -192,7 +192,7 @@
 
     <section id="languages" class="section reveal">
       <div class="section-label">05 — Languages</div>
-      <h2 class="section-title">Languages</h2>
+      <h2 class="section-title scramble">Languages</h2>
       <div class="lang-grid">
         <div class="lang-item">
           <div class="lang-name">Bengali</div>
@@ -219,7 +219,7 @@
 
     <section id="details" class="section reveal">
       <div class="section-label">06 — Details</div>
-      <h2 class="section-title">Personal Details</h2>
+      <h2 class="section-title scramble">Personal Details</h2>
       <div class="details-grid">
         <div class="detail-item">
           <div class="detail-label">Date of Birth</div>
@@ -261,11 +261,15 @@
       if (footer) footer.textContent = e;
     })();
 
-    const observer = new IntersectionObserver((entries) => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    /* ── 1. Scroll reveal ── */
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
+    /* ── 2. Active nav ── */
     const navLinks = document.querySelectorAll('.nav-link');
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -278,6 +282,7 @@
     }, { threshold: 0.4 });
     document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
 
+    /* ── 3. Theme toggle ── */
     let isLight = false;
     const themeBtn = document.getElementById('theme-toggle');
     themeBtn.addEventListener('click', () => {
@@ -287,6 +292,128 @@
       themeBtn.querySelector('.icon-sun').style.display = isLight ? 'block' : 'none';
       themeBtn.querySelector('.action-label').textContent = isLight ? 'Dark Mode' : 'Light Mode';
     });
+
+    /* ── 4. Scramble text on section titles ── */
+    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%';
+    function scramble(el) {
+      const original = el.textContent;
+      let frame = 0;
+      const totalFrames = 18;
+      el.dataset.original = original;
+      const interval = setInterval(() => {
+        el.textContent = original.split('').map((ch, i) => {
+          if (ch === ' ') return ' ';
+          if (frame / totalFrames > i / original.length) return ch;
+          return CHARS[Math.floor(Math.random() * CHARS.length)];
+        }).join('');
+        frame++;
+        if (frame > totalFrames) {
+          el.textContent = original;
+          clearInterval(interval);
+        }
+      }, 40);
+    }
+
+    const scrambleObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          scramble(e.target);
+          scrambleObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.scramble').forEach(el => scrambleObserver.observe(el));
+
+    /* ── 5. Count-up on scores ── */
+    function countUp(el) {
+      const target = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const isDecimal = target % 1 !== 0;
+      const duration = 1200;
+      const steps = 50;
+      const interval = duration / steps;
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        const val = target * (step / steps);
+        el.textContent = prefix + (isDecimal ? val.toFixed(2) : Math.round(val)) + suffix;
+        if (step >= steps) {
+          el.textContent = prefix + target + suffix;
+          clearInterval(timer);
+        }
+      }, interval);
+    }
+
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting && e.target.dataset.count) {
+          countUp(e.target);
+          countObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.8 });
+    document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+    /* ── 6. Language bar animate on scroll ── */
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const fills = e.target.querySelectorAll('.lang-fill');
+          fills.forEach(fill => {
+            const w = fill.style.width;
+            fill.style.width = '0%';
+            setTimeout(() => { fill.style.transition = 'width 1s ease'; fill.style.width = w; }, 100);
+          });
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const langGrid = document.querySelector('.lang-grid');
+    if (langGrid) barObserver.observe(langGrid);
+
+    /* ── 7. Magnetic cursor on sidebar elements ── */
+    if (!isMobile) {
+      const magnetTargets = document.querySelectorAll('.avatar-ring, .tag, .nav-link, .action-btn');
+      document.addEventListener('mousemove', (e) => {
+        magnetTargets.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = e.clientX - cx;
+          const dy = e.clientY - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const maxDist = 80;
+          if (dist < maxDist) {
+            const pull = (1 - dist / maxDist) * 6;
+            el.style.transform = `translate(${dx * pull / dist}px, ${dy * pull / dist}px)`;
+          } else {
+            el.style.transform = '';
+          }
+        });
+      });
+    }
+
+    /* ── 8. Parallax sidebar on scroll ── */
+    if (!isMobile) {
+      const sidebarInner = document.querySelector('.sidebar-inner');
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        sidebarInner.style.transform = `translateY(${scrollY * 0.08}px)`;
+      }, { passive: true });
+    }
+
+    /* ── 9. Name signature draw on load ── */
+    const nameLast = document.querySelector('.name-last');
+    if (nameLast) {
+      nameLast.style.opacity = '0';
+      nameLast.style.transition = 'none';
+      setTimeout(() => {
+        nameLast.style.transition = 'opacity 0.4s ease';
+        nameLast.style.opacity = '1';
+        scramble(nameLast);
+      }, 400);
+    }
 
     window.addEventListener('beforeprint', () => {
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));

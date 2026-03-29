@@ -650,8 +650,19 @@ body.light {
   height: 100%;
   background: var(--accent);
   border-radius: 2px;
+  width: 0%;
   transition: background 0.3s;
 }
+
+.avatar-ring,
+.tag,
+.nav-link,
+.action-btn {
+  will-change: transform;
+  transition: transform 0.15s ease, color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.name-last { display: inline-block; }
 
 /* ── Details ── */
 
