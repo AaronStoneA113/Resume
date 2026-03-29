@@ -60,13 +60,24 @@ body.light {
 }
 
 @media print {
-  body { display: block; }
+  body {
+    display: block;
+    position: relative;
+  }
   .sidebar {
     position: absolute;
     height: 100%;
+    top: 0;
+    left: 0;
   }
   .main-content {
     margin-left: var(--sidebar-w);
+  }
+  .sidebar-actions {
+    display: none;
+  }
+  section, .timeline-item, .project-card, .detail-item {
+    break-inside: avoid;
   }
 }
 

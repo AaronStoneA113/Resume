@@ -295,15 +295,26 @@
 
     document.getElementById('download-btn').addEventListener('click', () => {
       const actions = document.querySelector('.sidebar-actions');
+      const sidebar = document.querySelector('.sidebar');
+      const main = document.querySelector('.main-content');
+
       actions.style.visibility = 'hidden';
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+      sidebar.style.position = 'absolute';
+      sidebar.style.height = '100%';
+      document.body.style.position = 'relative';
+
       html2pdf().set({
         margin: 0,
         filename: 'Abhishek_Roy_Resume.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0, windowWidth: 1200 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       }).from(document.body).save().then(() => {
+        sidebar.style.position = '';
+        sidebar.style.height = '';
+        document.body.style.position = '';
         actions.style.visibility = '';
       });
     });
