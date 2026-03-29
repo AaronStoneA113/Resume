@@ -13,9 +13,10 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+
       <div class="avatar-block">
         <div class="avatar-ring">
-          <div class="avatar-initials">AR</div>
+          <img src="profile.jpg" alt="Abhishek Roy" class="avatar-img">
         </div>
       </div>
 
@@ -27,21 +28,12 @@
       <div class="sidebar-role">MTech IT Student</div>
 
       <nav class="sidebar-nav">
-        <a href="#summary" class="nav-link">
-          <span class="nav-dot"></span>Summary
-        </a>
-        <a href="#education" class="nav-link">
-          <span class="nav-dot"></span>Education
-        </a>
-        <a href="#projects" class="nav-link">
-          <span class="nav-dot"></span>Projects
-        </a>
-        <a href="#skills" class="nav-link">
-          <span class="nav-dot"></span>Skills
-        </a>
-        <a href="#details" class="nav-link">
-          <span class="nav-dot"></span>Details
-        </a>
+        <a href="#summary" class="nav-link"><span class="nav-dot"></span>Summary</a>
+        <a href="#education" class="nav-link"><span class="nav-dot"></span>Education</a>
+        <a href="#projects" class="nav-link"><span class="nav-dot"></span>Projects</a>
+        <a href="#skills" class="nav-link"><span class="nav-dot"></span>Skills</a>
+        <a href="#languages" class="nav-link"><span class="nav-dot"></span>Languages</a>
+        <a href="#details" class="nav-link"><span class="nav-dot"></span>Details</a>
       </nav>
 
       <div class="contact-block">
@@ -58,6 +50,19 @@
           <span>Lanka, Assam, 782446</span>
         </div>
       </div>
+
+      <div class="sidebar-actions">
+        <button class="action-btn" id="theme-toggle" title="Toggle light/dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <span class="action-label">Light Mode</span>
+        </button>
+        <button class="action-btn" id="download-btn" title="Download as PDF">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download PDF</span>
+        </button>
+      </div>
+
     </div>
   </aside>
 
@@ -75,7 +80,6 @@
       <div class="section-label">02 — Education</div>
       <h2 class="section-title">Education</h2>
       <div class="timeline">
-
         <div class="timeline-item">
           <div class="timeline-year">2024 – Present</div>
           <div class="timeline-body">
@@ -83,7 +87,6 @@
             <div class="timeline-inst">University of Hyderabad</div>
           </div>
         </div>
-
         <div class="timeline-item">
           <div class="timeline-year">2018 – 2022</div>
           <div class="timeline-body">
@@ -91,7 +94,6 @@
             <div class="timeline-inst">North Eastern Hills University</div>
           </div>
         </div>
-
         <div class="timeline-item">
           <div class="timeline-year">2017</div>
           <div class="timeline-body">
@@ -99,7 +101,6 @@
             <div class="timeline-inst">Vivekananda Kendra Vidyalaya</div>
           </div>
         </div>
-
         <div class="timeline-item">
           <div class="timeline-year">2015</div>
           <div class="timeline-body">
@@ -107,7 +108,6 @@
             <div class="timeline-inst">Vivekananda Kendra Vidyalaya</div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -140,6 +140,26 @@
           </div>
         </div>
 
+        <div class="project-card project-card-featured">
+          <div class="project-number">04</div>
+          <div class="project-info">
+            <div class="project-name-row">
+              <a href="https://www.gurukulgroup.in/" target="_blank" rel="noopener" class="project-link">
+                Gurukul Group of Education Wing
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <span class="project-badge">March 2026</span>
+            </div>
+            <div class="project-desc">School website for Gurukul Group built with HTML, CSS, and JavaScript. Features Cloudinary-powered dynamic image loading, 18-page static architecture, and deployed on Vercel with a custom GoDaddy domain.</div>
+            <div class="project-tags">
+              <span>HTML/CSS</span>
+              <span>JavaScript</span>
+              <span>Vercel</span>
+              <span>Cloudinary</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -147,7 +167,6 @@
       <div class="section-label">04 — Skills</div>
       <h2 class="section-title">Skills</h2>
       <div class="skills-wrap">
-
         <div class="skills-group">
           <div class="skills-group-label">Technical</div>
           <div class="skills-tags">
@@ -160,7 +179,6 @@
             <span class="tag">XML</span>
           </div>
         </div>
-
         <div class="skills-group">
           <div class="skills-group-label">Soft Skills</div>
           <div class="skills-tags">
@@ -169,12 +187,38 @@
             <span class="tag tag-soft">Communication</span>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section id="languages" class="section reveal">
+      <div class="section-label">05 — Languages</div>
+      <h2 class="section-title">Languages</h2>
+      <div class="lang-grid">
+        <div class="lang-item">
+          <div class="lang-name">Bengali</div>
+          <div class="lang-level-label">Native</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">English</div>
+          <div class="lang-level-label">Professional</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">Hindi</div>
+          <div class="lang-level-label">Fluent</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:82%"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-name">Assamese</div>
+          <div class="lang-level-label">Conversational</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:60%"></div></div>
+        </div>
       </div>
     </section>
 
     <section id="details" class="section reveal">
-      <div class="section-label">05 — Details</div>
+      <div class="section-label">06 — Details</div>
       <h2 class="section-title">Personal Details</h2>
       <div class="details-grid">
         <div class="detail-item">
@@ -204,31 +248,59 @@
 
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
-
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-          if (active) active.classList.add('active');
+          navLinks.forEach(l => l.classList.remove('active'));
+          const a = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (a) a.classList.add('active');
         }
       });
-    }, { threshold: 0.5 });
-
+    }, { threshold: 0.4 });
     sections.forEach(s => sectionObserver.observe(s));
+
+    const themeBtn = document.getElementById('theme-toggle');
+    const moonIcon = themeBtn.querySelector('.icon-moon');
+    const sunIcon = themeBtn.querySelector('.icon-sun');
+    const label = themeBtn.querySelector('.action-label');
+    let isLight = false;
+
+    themeBtn.addEventListener('click', () => {
+      isLight = !isLight;
+      document.body.classList.toggle('light', isLight);
+      moonIcon.style.display = isLight ? 'none' : 'block';
+      sunIcon.style.display = isLight ? 'block' : 'none';
+      label.textContent = isLight ? 'Dark Mode' : 'Light Mode';
+    });
+
+    document.getElementById('download-btn').addEventListener('click', () => {
+      const actionsEl = document.querySelector('.sidebar-actions');
+      actionsEl.style.visibility = 'hidden';
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+
+      const opt = {
+        margin: 0,
+        filename: 'Abhishek_Roy_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(document.body).save().then(() => {
+        actionsEl.style.visibility = '';
+      });
+    });
   </script>
 
 </body>
