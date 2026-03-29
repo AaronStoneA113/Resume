@@ -41,9 +41,9 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.22 2 2 0 012.21 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.18a16 16 0 006.29 6.29l1.29-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
           <span>8761947775</span>
         </a>
-        <a href="mailto:abhishekroy.1599@gmail.com" class="contact-item">
+        <a href="/cdn-cgi/l/email-protection#a0c1c2c8c9d3c8c5cbd2cfd98e91959999e0c7cdc1c9cc8ec3cfcd" class="contact-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>abhishekroy.1599@gmail.com</span>
+          <span><span class="__cf_email__" data-cfemail="3c5d5e54554f5459574e5345120d0905057c5b515d5550125f5351">[email&#160;protected]</span></span>
         </a>
         <div class="contact-item">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -94,7 +94,7 @@
           <div class="timeline-body">
             <div class="timeline-degree">B.Tech in Information Technology</div>
             <div class="timeline-inst">North Eastern Hills University</div>
-            <div class="timeline-score">CGPA: 7.2 / 10</div>
+            <div class="timeline-score">First Division — CGPA: 8.05 / 10</div>
           </div>
         </div>
 
@@ -200,23 +200,23 @@
       <div class="lang-grid">
         <div class="lang-item">
           <div class="lang-name">Bengali</div>
-          <div class="lang-level-label">Native</div>
+          <div class="lang-level-label">Speak</div>
           <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-name">English</div>
-          <div class="lang-level-label">Professional</div>
-          <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+          <div class="lang-level-label">Read, Write, Speak</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-name">Hindi</div>
-          <div class="lang-level-label">Fluent</div>
-          <div class="lang-bar"><div class="lang-fill" style="width:82%"></div></div>
+          <div class="lang-level-label">Read, Write, Speak</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-name">Assamese</div>
-          <div class="lang-level-label">Conversational</div>
-          <div class="lang-bar"><div class="lang-fill" style="width:60%"></div></div>
+          <div class="lang-level-label">Speak</div>
+          <div class="lang-bar"><div class="lang-fill" style="width:45%"></div></div>
         </div>
       </div>
     </section>
@@ -245,14 +245,14 @@
     </section>
 
     <footer class="resume-footer">
-      <span class="footer-mono">abhishekroy.1599@gmail.com</span>
+      <span class="footer-mono"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9efffcf6f7edf6fbf5ecf1e7b0afaba7a7def9f3fff7f2b0fdf1f3">[email&#160;protected]</a></span>
       <span class="footer-divider">·</span>
       <span class="footer-mono">8761947775</span>
     </footer>
 
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -285,17 +285,4 @@
       const actions = document.querySelector('.sidebar-actions');
       actions.style.visibility = 'hidden';
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-      html2pdf().set({
-        margin: 0,
-        filename: 'Abhishek_Roy_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      }).from(document.body).save().then(() => {
-        actions.style.visibility = '';
-      });
-    });
-  </script>
-
-</body>
-</html>
+      html2pdf(
