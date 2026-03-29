@@ -53,12 +53,12 @@
 
       <div class="sidebar-actions">
         <button class="action-btn" id="theme-toggle" title="Toggle light/dark mode">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
           <span class="action-label">Light Mode</span>
         </button>
         <button class="action-btn" id="download-btn" title="Download as PDF">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           <span>Download PDF</span>
         </button>
       </div>
@@ -136,27 +136,23 @@
           <div class="project-number">03</div>
           <div class="project-info">
             <div class="project-name">Full Stack Web Deployments</div>
-            <div class="project-desc">Built and deployed the OEP Architecture Website and WTD Company Website. Handled frontend, backend, and deployment pipelines.</div>
-          </div>
-        </div>
-
-        <div class="project-card project-card-featured">
-          <div class="project-number">04</div>
-          <div class="project-info">
-            <div class="project-name-row">
-              <a href="https://www.gurukulgroup.in/" target="_blank" rel="noopener" class="project-link">
-                Gurukul Group of Education Wing
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-              <span class="project-badge">March 2026</span>
-            </div>
-            <div class="project-desc">School website for Gurukul Group built with HTML, CSS, and JavaScript. Features Cloudinary-powered dynamic image loading, 18-page static architecture, and deployed on Vercel with a custom GoDaddy domain.</div>
-            <div class="project-tags">
-              <span>HTML/CSS</span>
-              <span>JavaScript</span>
-              <span>Vercel</span>
-              <span>Cloudinary</span>
-            </div>
+            <ul class="project-deploy-list">
+              <li>
+                <span class="deploy-name">OEP Architecture Website</span>
+                <span class="deploy-date">June 2024</span>
+              </li>
+              <li>
+                <span class="deploy-name">WTD Company Website</span>
+                <span class="deploy-date">June 2024</span>
+              </li>
+              <li>
+                <span class="deploy-name">
+                  <a href="https://www.gurukulgroup.in/" target="_blank" rel="noopener" class="deploy-link">Gurukul Group of Education Wing</a>
+                </span>
+                <span class="deploy-date">March 2026</span>
+              </li>
+            </ul>
+            <div class="project-desc">Built and deployed client websites handling frontend, backend, and full deployment pipelines.</div>
           </div>
         </div>
 
