@@ -16,16 +16,21 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 const navLinks = document.querySelectorAll('.nav-link');
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const a = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
-      if (a) a.classList.add('active');
-    }
-  });
-}, { threshold: 0.4 });
-document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+const sections = Array.from(document.querySelectorAll('section[id]'));
+
+function setActiveNav() {
+  const scrollY = window.scrollY + 120;
+  let current = sections[0];
+  for (const s of sections) {
+    if (s.offsetTop <= scrollY) current = s;
+  }
+  navLinks.forEach(l => l.classList.remove('active'));
+  const a = document.querySelector(`.nav-link[href="#${current.id}"]`);
+  if (a) a.classList.add('active');
+}
+
+window.addEventListener('scroll', setActiveNav, { passive: true });
+setActiveNav();
 
 let isLight = false;
 const themeBtn = document.getElementById('theme-toggle');
