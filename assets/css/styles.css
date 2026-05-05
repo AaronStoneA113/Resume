@@ -517,32 +517,40 @@ body.light {
   margin-bottom: 0.5rem;
 }
 
+.project-meta {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.45rem;
+  transition: color 0.3s;
+}
+
 .project-desc {
   font-size: 0.82rem;
   color: var(--text-secondary);
   line-height: 1.65;
 }
 
-/* ── Deploy list ── */
+/* ── Deploy list in Experience ── */
 
-.project-deploy-list {
-  list-style: none;
-  margin: 0.4rem 0 0.85rem;
+.timeline-deploylist {
+  margin: 0.6rem 0 0;
   display: flex;
   flex-direction: column;
 }
 
-.project-deploy-list li {
+.deploy-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.5rem 0;
+  padding: 0.45rem 0;
   border-bottom: 1px solid var(--border);
   transition: border-color 0.3s;
 }
 
-.project-deploy-list li:last-child {
+.deploy-row:last-child {
   border-bottom: none;
 }
 
